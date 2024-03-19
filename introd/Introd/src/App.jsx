@@ -5,17 +5,27 @@ import './App.css'
 
 function App(){
 
-  const [count,setcount]=useState(0);
-
-  function onclickhandler(){
-    setcount(count+1);
-  }
-
+  const [count,setCount]=useState(0);
   return (
     <div>
-    <button onClick={onclickhandler}>Counter {count}</button>
+    <CustomButton count={count} setCount={setCount}></CustomButton>
+    <CustomButton count={count+1} setCount={setCount}></CustomButton>
+    <CustomButton count={count-1} setCount={setCount}></CustomButton>
+    <CustomButton count={count*5} setCount={setCount}></CustomButton>
+    <CustomButton count={count%5} setCount={setCount}></CustomButton>
     </div>
 
+  )
+}
+
+//Component
+function CustomButton(props){
+
+  function clickfunc(){
+    props.setCount(props.count+1)
+  }
+  return(
+    <button onClick={clickfunc}>Counter {props.count}</button>
   )
 }
 
