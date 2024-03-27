@@ -1,0 +1,23 @@
+*{
+    padding: 0px;
+    margin: 0px;
+  }
+
+#navv{
+    height: 100px;
+    width: 100%;
+    background-color: bisque;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#logo{
+    height: 90px;
+    width: 90x;
+}
+#di2{
+    display: flex;
+    
+}

@@ -1,0 +1,14 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+h1{
+    border-bottom: 2px solid black;
+}
+
+#cardss{
+   
+    height: 15vw;
+    width: 15vw;
+    border: 4px solid black;
+}

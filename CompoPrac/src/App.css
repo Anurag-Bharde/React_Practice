@@ -1,0 +1,8 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.cardds{
+  display: flex;
+  justify-content: space-around;
+}
