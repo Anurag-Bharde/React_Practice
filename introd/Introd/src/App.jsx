@@ -4,21 +4,38 @@ import {useState} from "react";
 // import './App.css'
 
 function App(){
+const [Obj,setObj]=useState([{
+  title:"We Go GYm",
+  description:"I go gym"
+},{
+  title:"We Go Play",
+  description: "He GO Playsss"
+}])
 
-  const [count,setCount]=useState(0);
+function addTodo(){
+  setObj([...Obj,{
+    title: "new Todo",
+    description: "desc of todo"
+  }])
+}
 
   return(
-    <div>
-      <CustomButton count={count} setCount={setCount}></CustomButton>
-    </div>
+    <>
+      <button onClick={addTodo}>Click Meh</button>
+     {Obj.map(function(todo){
+      return <Sispp title={todo.title} description={todo.description}></Sispp>
+     })}
+    </>
   )
 }
-  function CustomButton(props){
 
-    function onclickhandler(){
-      props.setCount(props.count+1);
-    }
-    return <button onClick={onclickhandler}> Counter {props.count}</button>
-  }
+function Sispp(props){
+  return(
+    <>
+      <h1>{props.title}</h1>
+      <h3>{props.description}</h3>
+    </>
+  )
+}
 
 export default App
