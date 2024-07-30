@@ -1,0 +1,35 @@
+import {useEffect, useState} from 'react'
+import axios from 'axios'
+// import { count } from 'console';
+
+function App(){
+  // let mk=3
+  const [bton,Setbton]=useState(1);
+  return <div>
+  <button onClick={()=>{Setbton(1)}}>1</button>
+  <button onClick={()=>{Setbton(2)}}>2</button>
+  <button onClick={()=>{Setbton(3)}}>3</button>
+  <button onClick={()=>{Setbton(4)}}>4</button>
+      <Todo id={bton}/>
+    </div>
+}
+
+function Todo({id}){
+
+  const [todos,setTodo]=useState({});
+
+  useEffect(()=>{
+ axios.get(`https://sum-server.100xdevs.com/todo?id=${id}`)
+ .then(response=>{
+  setTodo(response.data.todo)
+ })
+},[id])
+
+   return <div>
+   <h5>{id}</h5>
+    <h1>{todos.title}</h1>
+    <h1>{todos.description}</h1>
+   </div>
+ }
+
+export default App;
